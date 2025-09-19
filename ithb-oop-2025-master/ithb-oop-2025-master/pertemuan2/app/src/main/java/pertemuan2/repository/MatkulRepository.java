@@ -9,6 +9,7 @@ import java.util.List;
 
 import pertemuan2.database.Database;
 import pertemuan2.models.Mahasiswa;
+import pertemuan2.models.MahasiswaMatkul;
 import pertemuan2.models.Matkul;
 
 public class MatkulRepository {
@@ -51,13 +52,12 @@ public class MatkulRepository {
     }
 
     // UPDAET
-    public static void updateMatkul(Matkul mtkl) {
-        String sql = "UPDATE matakuliah SET nama = ? WHERE kode_matakuliah = ?";
+    public static void updateMatkul(String kode_matkul, String kode_jurusan) {
+        String sql = "UPDATE matakuliah SET kode_jurusan = ? WHERE kode_matakuliah = ?";
         try {
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, mtkl.kode_matakuliah);
-            preparedStatement.setString(2, mtkl.nama);
-            preparedStatement.setInt(3, mtkl.sks);
+            preparedStatement.setString(1, kode_matkul);
+            preparedStatement.setString(2, kode_jurusan);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -72,6 +72,22 @@ public class MatkulRepository {
             preparedStatement.setString(1, kode_matakuliah);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // POIN D
+    public static void tambahNilai(MahasiswaMatkul nilai) {
+        String sql = "INSERT INTO mahasiswa_matakuliah (nim, kode_matakuliah, indeks_nilai) VALUES (?, ?, ?)";
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setString(1, nilai.nim);
+            preparedStatement.setString(2, nilai.kode_matakuliah);
+            preparedStatement.setString(3, nilai.indeks_nilai);
+            preparedStatement.executeUpdate();
+            System.out.println("Berhasil kasih nilai utk : " + nilai.nim);
+        } catch (SQLException e) {
+            System.out.println("Gagal kasih nilai utk : " + nilai.nim);
             e.printStackTrace();
         }
     }
