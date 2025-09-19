@@ -21,12 +21,12 @@ public class MatkulRepository {
 
     // CREATE
     public static void addMatkul(Matkul mtkl) {
-        String sql = "INSERT INTO matkul (kodeMK, namaMK, SKS) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO matakuliah (kode_matakuliah, nama, sks) VALUES (?, ?, ?)";
         try {
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, mtkl.kodeMK);
-            preparedStatement.setString(2, mtkl.namaMK);
-            preparedStatement.setInt(3, mtkl.SKS);
+            preparedStatement.setString(1, mtkl.kode_matakuliah);
+            preparedStatement.setString(2, mtkl.nama);
+            preparedStatement.setInt(3, mtkl.sks);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -36,13 +36,13 @@ public class MatkulRepository {
     // READ ALL
     public static List<Matkul> getAllMatkul() {
         List<Matkul> result = new ArrayList<>();
-        String sql = "SELECT kodeMK, namaMK, SKS FROM matkul";
+        String sql = "SELECT kode_matakuliah, nama, sks FROM matakuliah";
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet resultSet = stmt.executeQuery();
 
             while (resultSet.next()) {
-                result.add(new Matkul(resultSet.getString("kodeMK"), resultSet.getString("namaMK"), resultSet.getInt("SKS")));
+                result.add(new Matkul(resultSet.getString("kode_matakuliah"), resultSet.getString("nama"), resultSet.getInt("sks"), resultSet.getString("kode_jurusan")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,12 +52,12 @@ public class MatkulRepository {
 
     // UPDAET
     public static void updateMatkul(Matkul mtkl) {
-        String sql = "UPDATE matkul SET namaMK = ? WHERE kodeMK = ?";
+        String sql = "UPDATE matakuliah SET nama = ? WHERE kode_matakuliah = ?";
         try {
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, mtkl.kodeMK);
-            preparedStatement.setString(2, mtkl.namaMK);
-            preparedStatement.setInt(3, mtkl.SKS);
+            preparedStatement.setString(1, mtkl.kode_matakuliah);
+            preparedStatement.setString(2, mtkl.nama);
+            preparedStatement.setInt(3, mtkl.sks);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -65,11 +65,11 @@ public class MatkulRepository {
     }
 
     // DEELTE
-    public static void deleteMatkul(String kodeMK) {
-        String sql = "DELETE FROM matkul WHERE kodeMK = ?";
+    public static void deleteMatkul(String kode_matakuliah) {
+        String sql = "DELETE FROM matakuliah WHERE kode_matakuliah = ?";
         try {
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, kodeMK);
+            preparedStatement.setString(1, kode_matakuliah);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

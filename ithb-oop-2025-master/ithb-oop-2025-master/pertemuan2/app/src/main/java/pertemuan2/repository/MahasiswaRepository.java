@@ -11,6 +11,7 @@ import java.util.List;
 // import pertemuan2.models.Mahasiswa;
 
 import pertemuan2.database.Database;
+import pertemuan2.models.Mahasiswa;
 
 public class MahasiswaRepository {
     private static final Connection conn;
@@ -34,14 +35,14 @@ public class MahasiswaRepository {
 
     // READ ALL
     public static List<Mahasiswa> getAllMahasiswa() {
-        List<Mahasiswa> result = new ArrayList<>();
+        List<Mahasiswa> result = new ArrayList<Mahasiswa>();
         String sql = "SELECT nim, nama FROM mahasiswa";
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet resultSet = stmt.executeQuery();
             
             while (resultSet.next()) {
-                result.add(new Mahasiswa(resultSet.getString("nim"), resultSet.getString("nama")));
+                result.add(new Mahasiswa(resultSet.getString("nim"), resultSet.getString("nama"), resultSet.getNString("kode_jurusan")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -57,7 +58,7 @@ public class MahasiswaRepository {
             preparedStatement.setString(1, nim);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                return new Mahasiswa(resultSet.getString("nim"), resultSet.getString("nama"));
+                return new Mahasiswa(resultSet.getString("nim"), resultSet.getString("nama"), resultSet.getString("kode_jurusan"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
