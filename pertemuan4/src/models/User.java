@@ -40,4 +40,8 @@ public abstract class User {
     public String getTempatTanggalLahir(){
         return tempatLahir + ", " + tanggalLahir;
     };
+
+    public String toString() {
+        return type + " nama " + " alamat " + " tempatLahir " + " tanggalLahir " + " telepon ";
+    }
 }
