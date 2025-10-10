@@ -9,4 +9,8 @@ public class MahasiswaSarjana extends Mahasiswa {
         super(nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon);
         this.matkul = new ArrayList<>();
     }
+
+    public ArrayList<Matkul> getListMatkul() {
+        return this.matkul;
+    }
 }
