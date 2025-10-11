@@ -34,7 +34,7 @@ public abstract class User {
     }
 
     public String getTelepon() {
-        return getTelepon();
+        return telepon;
     }
 
     public String getTempatTanggalLahir(){

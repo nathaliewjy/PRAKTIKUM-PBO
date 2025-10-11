@@ -9,7 +9,7 @@ public class MahasiswaDoktor extends Mahasiswa {
     private int sidang3;
 
     public MahasiswaDoktor(String nim, String kodeJurusan, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
-        super(nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon);
+        super(UserType.MAHASISWA_DOKTOR, nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon);
         this.disertasi = disertasi;
         this.sidang1 = sidang1;
         this.sidang2 = sidang2;

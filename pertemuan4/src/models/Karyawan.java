@@ -6,7 +6,7 @@ public class Karyawan extends Staff {
     private int salary;
     private ArrayList<PresensiStaff> presensiStaff;
 
-    public Karyawan(String nik, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
+    public Karyawan(int salary, String nik, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
         super(nik, nama, alamat, tempatLahir, tanggalLahir, telepon);
         this.salary = salary;
         this.presensiStaff = new ArrayList<>();

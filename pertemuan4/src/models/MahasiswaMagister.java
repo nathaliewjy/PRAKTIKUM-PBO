@@ -7,7 +7,7 @@ public class MahasiswaMagister extends Mahasiswa {
     private String tesis;
 
     public MahasiswaMagister(String nim, String kodeJurusan, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
-        super(nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon);
+        super(UserType.MAHASISWA_MAGISTER, nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon);
         this.matkul = new ArrayList<>();
         this.tesis = tesis;
     }
@@ -21,6 +21,10 @@ public class MahasiswaMagister extends Mahasiswa {
     }
 
     public ArrayList<Matkul> getListMatkul() {
-        return this.matkul;
+        return matkul;
+    }
+
+    public void setListMatkul(ArrayList<Matkul> matkul) {
+        this.matkul = matkul;
     }
 }
