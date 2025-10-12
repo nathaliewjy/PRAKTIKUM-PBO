@@ -17,7 +17,7 @@ public class App {
         absensi.addListPresensi("10 Oktober 2025", Status.HADIR);
         System.out.println("Mahasiswa magister : " + mhs2.toString());
 
-        MahasiswaDoktor mhs3 = new MahasiswaDoktor("Penerapan blabla", "90", "95", "100", "1124003", "IF", "Shinta", "THI", "Jakarta", "1970", "085");
+        MahasiswaDoktor mhs3 = new MahasiswaDoktor("Penerapan blabla", 90, 95, 100, "1124003", "IF", "Shinta", "THI", "Jakarta", "1970", "085");
         System.out.println("Mahasiswa doktor : " + mhs3.toString());
 
         DosenHonorer dsn1 = new DosenHonorer(50000, "1124004", "Budi", "DU", "Solo", "1980", "087");
