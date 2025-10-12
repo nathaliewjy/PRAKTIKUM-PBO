@@ -16,4 +16,9 @@ public class Presensi {
     public void setTanggal(String tanggal) {
         this.tanggal = tanggal;
     }
+
+    @Override
+    public String toString() {
+        return this.tanggal + " " + this.status;
+    }
 }

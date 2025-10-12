@@ -15,4 +15,9 @@ public class MatkulPilihan extends Matkul{
     public void setMinMhs(int minMhs) {
         this.minMhs = minMhs;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " + this.minMhs;
+    }
 }

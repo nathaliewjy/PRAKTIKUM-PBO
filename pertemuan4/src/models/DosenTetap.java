@@ -4,7 +4,7 @@ public class DosenTetap extends Dosen{
     private int salary;
 
     public DosenTetap(int salary, String nik, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
-        super(nik, nama, alamat, tempatLahir, tanggalLahir, telepon);
+        super(UserType.DOSEN_TETAP, nik, nama, alamat, tempatLahir, tanggalLahir, telepon);
         this.salary = salary;
     }
 
@@ -14,5 +14,10 @@ public class DosenTetap extends Dosen{
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " + this.salary;
     }
 }

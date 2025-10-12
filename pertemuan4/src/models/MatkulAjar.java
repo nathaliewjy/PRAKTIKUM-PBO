@@ -17,4 +17,9 @@ public class MatkulAjar extends Matkul {
     public void setListPresensiStaff(ArrayList<PresensiStaff> listPresensiStaff) {
         this.listPresensiStaff = listPresensiStaff;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " + this.listPresensiStaff;
+    }
 }

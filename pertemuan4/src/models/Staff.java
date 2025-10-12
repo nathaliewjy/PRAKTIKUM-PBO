@@ -5,8 +5,8 @@ public class Staff extends User {
 
     // usertype ga masuk parameter krn usertype cmn bs 1
     // kl udh jd staff gbs jd mhs -> mknya lgsg dideclare aja di super
-    public Staff(String nik, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
-        super(UserType.STAFF, nama, alamat, tempatLahir, tanggalLahir, telepon);
+    public Staff(UserType type, String nik, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
+        super(type, nama, alamat, tempatLahir, tanggalLahir, telepon);
         this.nik = nik;
     }
 
@@ -16,5 +16,10 @@ public class Staff extends User {
 
     public void setNik(String nik) {
         this.nik = nik;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " + this.nik;
     }
 }

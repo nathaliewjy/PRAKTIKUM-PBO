@@ -41,7 +41,8 @@ public abstract class User {
         return tempatLahir + ", " + tanggalLahir;
     };
 
+    @Override
     public String toString() {
-        return type + " nama " + " alamat " + " tempatLahir " + " tanggalLahir " + " telepon ";
+        return this.type + " " + this.nama + " " + this.alamat + " " + this.tanggalLahir + " " + this.tempatLahir + " " + this.telepon;
     }
 }

@@ -22,4 +22,9 @@ public class Matkul {
     public int getSKS() {
         return sks;
     }
+
+    @Override
+    public String toString() {
+        return this.kodeMatkul + " " + this.namaMatkul + " " + this.sks;
+    }
 }

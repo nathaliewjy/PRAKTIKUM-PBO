@@ -8,7 +8,7 @@ public class MahasiswaDoktor extends Mahasiswa {
     private int sidang2;
     private int sidang3;
 
-    public MahasiswaDoktor(String nim, String kodeJurusan, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
+    public MahasiswaDoktor(String disertasi, int sidang1, int sidang2, int sidang3, String nim, String kodeJurusan, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
         super(UserType.MAHASISWA_DOKTOR, nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon);
         this.disertasi = disertasi;
         this.sidang1 = sidang1;
@@ -46,5 +46,10 @@ public class MahasiswaDoktor extends Mahasiswa {
 
     public void setSidang3(int sidang3) {
         this.sidang3 = sidang3;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " + this.disertasi + " " + this.sidang1 + " " + this.sidang2 + " " + this.sidang3;
     }
 }

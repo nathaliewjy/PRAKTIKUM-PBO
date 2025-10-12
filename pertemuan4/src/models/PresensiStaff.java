@@ -16,4 +16,8 @@ public class PresensiStaff extends Presensi{
         this.jam = jam;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + " " + this.jam;
+    }
 }
