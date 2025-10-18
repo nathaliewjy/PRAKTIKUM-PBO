@@ -1,5 +1,6 @@
 package views.mahasiswa;
 
+import controllers.MahasiswaSarjanaController;
 import views.mahasiswa.MahasiswaAddView;
 import views.mahasiswa.MahasiswaListView;
 
@@ -12,12 +13,14 @@ public class MahasiswaView {
     private MatkulAmbilAddView matkulAmbilAddView;
     private MahasiswaListView mahasiswaListView;
     private MahasiswaController mahasiswaController;
+    private MahasiswaSarjanaController mahasiswaSarjanaController;
 
     public MahasiswaView() {
         this.mahasiswaAddView = new MahasiswaAddView();
         this.matkulAmbilAddView = new MatkulAmbilAddView();
         this.mahasiswaListView = new MahasiswaListView();
         this.mahasiswaController = new MahasiswaController();
+        this.mahasiswaSarjanaController = new MahasiswaSarjanaController();
     }
 
     public void render() {
@@ -27,8 +30,22 @@ public class MahasiswaView {
         System.out.println("3. Edit mhs");
         System.out.println("4. Delete mhs");
         System.out.println("0. Exit");
+        System.out.print("Pilih menu : ");
 
         handleMenuInput();
+    }
+
+    private void handleMenuInput() {
+        int pilihMenu = CLIUtil.getInt();
+
+        switch (pilihMenu) {
+            case 1:
+                mahasiswaListView.render();
+                break;
+            case 2:
+                addMahasiswa();
+                break;
+        }
     }
 
     public void addMahasiswa() {
@@ -36,20 +53,6 @@ public class MahasiswaView {
         System.out.println("S1 / S2 / S3 (1 / 2 / 3) : ");
 
         handleMenuAddMahasiswa();
-    }
-
-    private void handleMenuInput() {
-        System.out.println("Pilih menu : ");
-        int pilihMenu = CLIUtil.getInt();
-
-        switch (pilihMenu) {
-            case 1:
-                 mahasiswaListView.render();
-                 break;
-            case 2:
-                addMahasiswa();
-                break;
-        }
     }
 
     private void handleMenuAddMahasiswa() {

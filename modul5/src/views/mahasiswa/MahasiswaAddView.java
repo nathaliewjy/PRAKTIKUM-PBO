@@ -1,13 +1,16 @@
 package views.mahasiswa;
 
 import controllers.MahasiswaController;
+import controllers.MahasiswaSarjanaController;
 import util.CLIUtil;
 
 public class MahasiswaAddView {
     private MahasiswaController mahasiswaController;
+    private MahasiswaSarjanaController mahasiswaSarjanaController;
 
     public MahasiswaAddView() {
         this.mahasiswaController = new MahasiswaController();
+        this.mahasiswaSarjanaController = new MahasiswaSarjanaController();
     }
 
     public void render() {
@@ -26,6 +29,6 @@ public class MahasiswaAddView {
         System.out.print("Telepon : ");
         String telepon = CLIUtil.getString();
 
-        mahasiswaController.add(nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon);
+        mahasiswaSarjanaController.addSarjana(nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon);
     }
 }

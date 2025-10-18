@@ -1,30 +1,25 @@
 package repository;
 
-import models.Mahasiswa;
-import models.MahasiswaDoktor;
-import models.MahasiswaMagister;
-import models.MahasiswaSarjana;
+import models.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MahasiswaRepository {
-    private List<Mahasiswa> mhss;
+    private static List<Mahasiswa> mhss;
+    private static List<MahasiswaSarjana> mhssS1;
 
-    public MahasiswaRepository() {
-        this.mhss = new ArrayList<>();
+    static {
+        mhss = new ArrayList<>();
+        mhssS1 = new ArrayList<>();
     }
 
-    public List<Mahasiswa> findAll() {
-        return this.mhss;
-    }
-
-    public void addMahasiswa(Mahasiswa mhs) {
-        this.mhss.add(mhs);
+    public static List<Mahasiswa> findAll() {
+        return mhss;
     }
 
     public Mahasiswa findByNim(String nim) {
-        for (Mahasiswa mhs : this.mhss) {
+        for (Mahasiswa mhs : mhss) {
             if (mhs.getNim().equals(nim)) {
                 return mhs;
             }
@@ -32,14 +27,23 @@ public class MahasiswaRepository {
         return null;
     }
 
-//
-//    public List<MahasiswaSarjana> findAllSarjana() {
-//        return this.mhssS1;
-//    }
-//
-//    public void addSarjana(MahasiswaSarjana mhsS1) {
-//        this.mhssS1.add(mhsS1);
-//    }
+
+    public static List<MahasiswaSarjana> findAllSarjana() {
+        return mhssS1;
+    }
+
+    public static void addMahasiswaSarjana(String nim, String kodeJurusan, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
+        mhssS1.add(new MahasiswaSarjana(nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon));
+    }
+
+    public static MahasiswaSarjana findByNimS1(String nim) {
+        for (MahasiswaSarjana mhsS1 : mhssS1) {
+            if (mhsS1.getNim().equals(nim)) {
+                return mhsS1;
+            }
+        }
+        return null;
+    }
 //
 //    public List<MahasiswaMagister> findAllMagister() {
 //        return this.mhssS2;

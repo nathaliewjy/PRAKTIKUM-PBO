@@ -7,14 +7,10 @@ import repository.MahasiswaRepository;
 public class MatkulAmbilController {
     private MahasiswaRepository mahasiswaRepository;
 
-    public MatkulAmbilController(MahasiswaRepository mahasiswaRepository) {
-        this.mahasiswaRepository = mahasiswaRepository;
-    }
-
     public void addMatkulKeMhs(String nim, int n1, int n2, int n3, String kodeMatkul, String namaMatkul, int sks) {
-        MahasiswaSarjana mhsS2 = mahasiswaRepository.findByNimS1(nim);
+        MahasiswaSarjana mhsS1 = MahasiswaRepository.findByNimS1(nim);
         MatkulAmbil matkul = new MatkulAmbil(n1, n2, n3, kodeMatkul, namaMatkul, sks);
 
-        mhsS2.addMatkulAmbil(matkul);
+        mhsS1.addMatkulAmbil(matkul);
     }
 }

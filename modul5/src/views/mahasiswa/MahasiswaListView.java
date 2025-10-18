@@ -34,7 +34,7 @@ public class MahasiswaListView {
     }
 
     public void render() {
-        var mhss = mahasiswaController.findAll();
+        var mhss = mahasiswaController.getAllMhss();
         render(mhss);
     }
 }

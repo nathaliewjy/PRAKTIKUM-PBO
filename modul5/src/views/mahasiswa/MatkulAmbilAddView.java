@@ -1,19 +1,26 @@
 package views.mahasiswa;
 
 import controllers.MahasiswaSarjanaController;
+import controllers.MatkulAmbilController;
 import repository.MahasiswaRepository;
+import repository.MatkulAmbilRepository;
 import util.CLIUtil;
 
 public class MatkulAmbilAddView {
     private MahasiswaSarjanaController mahasiswaSarjanaController;
     private MahasiswaRepository mahasiswaRepository;
+    private MatkulAmbilRepository matkulAmbilRepository;
+    private MatkulAmbilController matkulAmbilController;
 
     public MatkulAmbilAddView() {
         this.mahasiswaSarjanaController = new MahasiswaSarjanaController();
-        this.mahasiswaRepository = new MahasiswaRepository();
+        this.matkulAmbilRepository = new MatkulAmbilRepository();
+        this.matkulAmbilController = new MatkulAmbilController();
     }
 
     public void render() {
+        System.out.println("NIM : ");
+        String nim = CLIUtil.getString();
         System.out.println("Ambil berapa matkul : ");
         int jumlahMatkul = CLIUtil.getInt();
 
@@ -33,7 +40,7 @@ public class MatkulAmbilAddView {
             System.out.println("SKS : ");
             int sks = CLIUtil.getInt();
 
-            mahasiswaRepository.(new );
+            matkulAmbilController.addMatkulKeMhs(nim, n1, n2, n3, kodeMatkul, namaMatkul, sks);
 
 
         }
