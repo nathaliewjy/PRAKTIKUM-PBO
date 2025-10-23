@@ -14,13 +14,13 @@ public class MahasiswaSarjana extends Mahasiswa {
         return this.matkulAmbil;
     }
 
-    public void addMatkulAmbil(int n1, int n2, int n3, String kodeMatkul, String namaMatkul, int sks) {
-        this.matkulAmbil.add(new MatkulAmbil(n1, n2, n3, kodeMatkul, namaMatkul, sks));
-    }
-
-//    public void addMatkulAmbil(MatkulAmbil matkul) {
-//        this.matkulAmbil.add(matkul);
+//    public void addMatkulAmbil(int n1, int n2, int n3, String kodeMatkul, String namaMatkul, int sks) {
+//        this.matkulAmbil.add(new MatkulAmbil(n1, n2, n3, kodeMatkul, namaMatkul, sks));
 //    }
+
+    public void addMatkulAmbil(MatkulAmbil matkul) {
+        this.matkulAmbil.add(matkul);
+    }
 
     @Override
     public String toString() {

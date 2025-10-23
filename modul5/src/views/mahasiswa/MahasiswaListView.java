@@ -1,20 +1,25 @@
 package views.mahasiswa;
 
 import controllers.MahasiswaController;
+import controllers.MahasiswaSarjanaController;
 import models.Mahasiswa;
+import models.MahasiswaSarjana;
 
 import java.util.List;
 
 public class MahasiswaListView {
     private MahasiswaController mahasiswaController;
+    private MahasiswaSarjanaController mahasiswaSarjanaController;
 
     public MahasiswaListView() {
         this.mahasiswaController = new MahasiswaController();
+        this.mahasiswaSarjanaController = new MahasiswaSarjanaController();
     }
 
-    public void render(List<Mahasiswa> mhss) {
-        for (int i = 0; i < mhss.size(); i++) {
-            Mahasiswa mhs = mhss.get(i);
+    // ini buat S1
+    public void renderMhs(List<MahasiswaSarjana> mhssS1) {
+        for (int i = 0; i < mhssS1.size(); i++) {
+            Mahasiswa mhs = mhssS1.get(i);
             String nim = mhs.getNim();
             String kodeJurusan = mhs.getKodeJurusan();
             String nama = mhs.getNama();
@@ -33,8 +38,9 @@ public class MahasiswaListView {
         }
     }
 
-    public void render() {
-        var mhss = mahasiswaController.getAllMhss();
-        render(mhss);
+    public void renderMhs() {
+        var mhssS1 = mahasiswaSarjanaController.getAllMhssS1();
+        renderMhs(mhssS1);
     }
+
 }

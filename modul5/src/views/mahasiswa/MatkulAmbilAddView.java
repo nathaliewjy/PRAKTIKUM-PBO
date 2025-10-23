@@ -41,8 +41,7 @@ public class MatkulAmbilAddView {
             int sks = CLIUtil.getInt();
 
             matkulAmbilController.addMatkulKeMhs(nim, n1, n2, n3, kodeMatkul, namaMatkul, sks);
-
-
         }
+        System.out.println("yey add");
     }
 }

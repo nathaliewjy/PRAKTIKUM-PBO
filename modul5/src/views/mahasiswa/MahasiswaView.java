@@ -12,6 +12,7 @@ public class MahasiswaView {
     private MahasiswaAddView mahasiswaAddView;
     private MatkulAmbilAddView matkulAmbilAddView;
     private MahasiswaListView mahasiswaListView;
+
     private MahasiswaController mahasiswaController;
     private MahasiswaSarjanaController mahasiswaSarjanaController;
 
@@ -24,44 +25,43 @@ public class MahasiswaView {
     }
 
     public void render() {
-        System.out.println("Menu Mahasiswa");
-        System.out.println("1. Show all mhs");
-        System.out.println("2. Add mhs");
-        System.out.println("3. Edit mhs");
-        System.out.println("4. Delete mhs");
-        System.out.println("0. Exit");
-        System.out.print("Pilih menu : ");
+        int pilihMenu = 1;
+        while (pilihMenu != 0) {
+            System.out.println("Menu Mahasiswa");
+            System.out.println("1. Show all mhs");
+            System.out.println("2. Add mhs");
+            System.out.println("0. Exit");
+            System.out.print("Pilih menu : ");
+            pilihMenu = CLIUtil.getInt();
 
-        handleMenuInput();
-    }
-
-    private void handleMenuInput() {
-        int pilihMenu = CLIUtil.getInt();
-
-        switch (pilihMenu) {
-            case 1:
-                mahasiswaListView.render();
-                break;
-            case 2:
-                addMahasiswa();
-                break;
+            switch (pilihMenu) {
+                case 1:
+                    mahasiswaListView.renderMhs();
+                    break;
+                case 2:
+                    addMahasiswa();
+                    break;
+                default:
+                    System.out.println("Exit");
+            }
         }
+
     }
 
     public void addMahasiswa() {
         System.out.println("Add Mahasiswa");
-        System.out.println("S1 / S2 / S3 (1 / 2 / 3) : ");
-
-        handleMenuAddMahasiswa();
-    }
-
-    private void handleMenuAddMahasiswa() {
+        System.out.println("1. Sarjana ");
+        System.out.println("2. Magister ");
+        System.out.println("3. Doktor");
+        System.out.println("Pilih mahasiawa : ");
         int pilihMhs = CLIUtil.getInt();
 
         switch (pilihMhs) {
             case 1:
-               mahasiswaAddView.render();
-               matkulAmbilAddView.render();
+                String nim = mahasiswaAddView.render();
+                if (nim != null) {
+                    matkulAmbilAddView.render();
+                }
         }
     }
 

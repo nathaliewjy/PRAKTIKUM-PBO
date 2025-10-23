@@ -22,13 +22,13 @@ public class MahasiswaController {
 //        this.mahasiswaRepository.addMahasiswaSarjana(nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon);
 //    }
 
-    public void delete() {
-
-    }
-
-    public void update(String nim, Mahasiswa mhs) {
-
-    }
+//    public void delete() {
+//
+//    }
+//
+//    public void update(String nim, Mahasiswa mhs) {
+//
+//    }
 
     // pake array krn nampilin semua mhs masuk ke list
 //    public Mahasiswa[] findAll() {

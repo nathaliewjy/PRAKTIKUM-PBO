@@ -18,13 +18,6 @@ public class MahasiswaSarjanaController {
         this.matkulAmbilRepository = new MatkulAmbilRepository();
     }
 
-//    // nyoba
-//    public void print() {
-//        System.out.println(mahasiswaRepository.findAllSarjana().getFirst().getNim());
-//        System.out.println(mahasiswaRepository.findAllSarjana().getFirst().getNim());
-//
-//    }
-
     public List<MahasiswaSarjana> getAllMhssS1() {
         return MahasiswaRepository.findAllSarjana();
     }
@@ -33,24 +26,20 @@ public class MahasiswaSarjanaController {
         MahasiswaRepository.addMahasiswaSarjana(nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon);
     }
 
-    public void addMatkul(int n1, int n2, int n3, String kodeMatkul, String namaMatkul, int sks) {
-        MahasiswaSarjana.addMatkulAmbil(new MatkulAmbil(n1, n2, n3, kodeMatkul, namaMatkul, sks));
-    }
-
-    public void delete() {
-
-    }
-
-    public void update(String nim, Mahasiswa mhs) {
-
-    }
+//    public void delete() {
+//
+//    }
+//
+//    public void update(String nim, Mahasiswa mhs) {
+//
+//    }
 
     // pake array krn nampilin semua mhs masuk ke list
     public MahasiswaSarjana[] findAllSarjana() {
         // conn prepstat get all mhs
         // conn prepstat get all jurusan (ada di JurusanController.findAll())
         // resolve object 1 per 1
-        List<MahasiswaSarjana> mhssS2 = MahasiswaRepository.findAllSarjana();
+        List<MahasiswaSarjana> mhssS1 = MahasiswaRepository.findAllSarjana();
         return new MahasiswaSarjana[0];
     }
 

@@ -1,19 +1,26 @@
 package views.mahasiswa;
 
 import controllers.MahasiswaController;
+import controllers.MahasiswaDoktorController;
+import controllers.MahasiswaMagisterController;
 import controllers.MahasiswaSarjanaController;
+import models.MahasiswaMagister;
 import util.CLIUtil;
 
 public class MahasiswaAddView {
     private MahasiswaController mahasiswaController;
     private MahasiswaSarjanaController mahasiswaSarjanaController;
+    private MahasiswaMagisterController mahasiswaMagisterController;
+    private MahasiswaDoktorController mahasiswaDoktorController;
 
     public MahasiswaAddView() {
         this.mahasiswaController = new MahasiswaController();
         this.mahasiswaSarjanaController = new MahasiswaSarjanaController();
+        this.mahasiswaMagisterController = new MahasiswaMagisterController();
+        this.mahasiswaDoktorController = new MahasiswaDoktorController();
     }
 
-    public void render() {
+    public String render() {
         System.out.print("NIM : ");
         String nim = CLIUtil.getString();
         System.out.print("Kode jurusan : ");
@@ -29,6 +36,10 @@ public class MahasiswaAddView {
         System.out.print("Telepon : ");
         String telepon = CLIUtil.getString();
 
-        mahasiswaSarjanaController.addSarjana(nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon);
+        // if nya gimana?
+
+        System.out.println("yey add");
+
+        return nim;
     }
 }
