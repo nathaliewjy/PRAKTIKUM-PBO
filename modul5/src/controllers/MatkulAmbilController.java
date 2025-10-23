@@ -9,6 +9,11 @@ public class MatkulAmbilController {
 
     public void addMatkulKeMhs(String nim, int n1, int n2, int n3, String kodeMatkul, String namaMatkul, int sks) {
         MahasiswaSarjana mhsS1 = MahasiswaRepository.findByNimS1(nim);
+
+        if (mhsS1 == null) {
+            System.out.println("NIM nya g ada");
+            return;
+        }
         MatkulAmbil matkul = new MatkulAmbil(n1, n2, n3, kodeMatkul, namaMatkul, sks);
 
         mhsS1.addMatkulAmbil(matkul);

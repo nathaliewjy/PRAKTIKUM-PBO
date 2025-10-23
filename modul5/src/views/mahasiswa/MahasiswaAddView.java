@@ -1,26 +1,11 @@
 package views.mahasiswa;
 
-import controllers.MahasiswaController;
-import controllers.MahasiswaDoktorController;
-import controllers.MahasiswaMagisterController;
-import controllers.MahasiswaSarjanaController;
-import models.MahasiswaMagister;
 import util.CLIUtil;
 
 public class MahasiswaAddView {
-    private MahasiswaController mahasiswaController;
-    private MahasiswaSarjanaController mahasiswaSarjanaController;
-    private MahasiswaMagisterController mahasiswaMagisterController;
-    private MahasiswaDoktorController mahasiswaDoktorController;
 
-    public MahasiswaAddView() {
-        this.mahasiswaController = new MahasiswaController();
-        this.mahasiswaSarjanaController = new MahasiswaSarjanaController();
-        this.mahasiswaMagisterController = new MahasiswaMagisterController();
-        this.mahasiswaDoktorController = new MahasiswaDoktorController();
-    }
-
-    public String render() {
+    // pake String[] biar semua data msk ke MhsView nnt
+    public String[] render() {
         System.out.print("NIM : ");
         String nim = CLIUtil.getString();
         System.out.print("Kode jurusan : ");
@@ -36,10 +21,11 @@ public class MahasiswaAddView {
         System.out.print("Telepon : ");
         String telepon = CLIUtil.getString();
 
-        // if nya gimana?
+        // if nya gimana? biar bisa if isSarjana, isMagister, isDoktor
+        // eh ternyata di MahasiswaView nya lgsg deng if condinya
 
         System.out.println("yey add");
 
-        return nim;
+        return new String[]{nim, kodeJurusan, nama, alamat, tempatLahir, tanggalLahir, telepon};
     }
 }

@@ -3,8 +3,8 @@ package models;
 public class DosenHonorer extends Dosen{
     private int honorPerSKS;
 
-    public DosenHonorer(int honorPerSKS, String nik, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
-        super(UserType.DOSEN_HONORER, nik, nama, alamat, tempatLahir, tanggalLahir, telepon);
+    public DosenHonorer(int honorPerSKS, String nik, String departemen, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
+        super(UserType.DOSEN_HONORER, nik, departemen, nama, alamat, tempatLahir, tanggalLahir, telepon);
         this.honorPerSKS = honorPerSKS;
     }
 

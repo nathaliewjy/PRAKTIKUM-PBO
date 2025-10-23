@@ -1,46 +1,48 @@
 package views.mahasiswa;
 
 import controllers.MahasiswaController;
-import controllers.MahasiswaSarjanaController;
+
 import models.Mahasiswa;
+import models.MahasiswaDoktor;
+import models.MahasiswaMagister;
 import models.MahasiswaSarjana;
 
 import java.util.List;
 
 public class MahasiswaListView {
     private MahasiswaController mahasiswaController;
-    private MahasiswaSarjanaController mahasiswaSarjanaController;
 
     public MahasiswaListView() {
         this.mahasiswaController = new MahasiswaController();
-        this.mahasiswaSarjanaController = new MahasiswaSarjanaController();
-    }
-
-    // ini buat S1
-    public void renderMhs(List<MahasiswaSarjana> mhssS1) {
-        for (int i = 0; i < mhssS1.size(); i++) {
-            Mahasiswa mhs = mhssS1.get(i);
-            String nim = mhs.getNim();
-            String kodeJurusan = mhs.getKodeJurusan();
-            String nama = mhs.getNama();
-            String alamat = mhs.getAlamat();
-            String tempatLahir = mhs.getTempatLahir();
-            String tanggalLahir = mhs.getTanggalLahir();
-            String telepon = mhs.getTelepon();
-
-            System.out.println("NIM : " + nim);
-            System.out.println("Kode jurusan : " + kodeJurusan);
-            System.out.println("Nama : " + nama);
-            System.out.println("Alamat : " + alamat);
-            System.out.println("Tempat lahir : " + tempatLahir);
-            System.out.println("Tanggal lahir : " + tanggalLahir);
-            System.out.println("Telpon : " + telepon);
-        }
     }
 
     public void renderMhs() {
-        var mhssS1 = mahasiswaSarjanaController.getAllMhssS1();
-        renderMhs(mhssS1);
-    }
+        List<Mahasiswa> mhss = mahasiswaController.getAllMhss();
 
+        for (int i = 0; i < mhss.size(); i++) {
+            Mahasiswa mhs = mhss.get(i);
+
+            System.out.println("NIM : " + mhs.getNim());
+            System.out.println("Kode jurusan : " + mhs.getKodeJurusan());
+            System.out.println("Nama : " + mhs.getNama());
+            System.out.println("Alamat : " + mhs.getAlamat());
+            System.out.println("Tempat lahir : " + mhs.getTempatLahir());
+            System.out.println("Tanggal lahir : " + mhs.getTanggalLahir());
+            System.out.println("Telpon : " + mhs.getTelepon());
+
+            if (mhs instanceof MahasiswaSarjana) {
+                MahasiswaSarjana mhsS1 = (MahasiswaSarjana) mhs;
+                System.out.println("Matkul ambil : " + mhsS1.getListMatkulAmbil());
+            } else if (mhs instanceof MahasiswaMagister) {
+                MahasiswaMagister mhsS2 = (MahasiswaMagister) mhs;
+                System.out.println("Tesis : " + mhsS2.getTesis());
+            } else if (mhs instanceof MahasiswaDoktor) {
+                MahasiswaDoktor mhsS3 = (MahasiswaDoktor) mhs;
+                System.out.println("Disertasi : " + mhsS3.getDisertasi());
+                System.out.println("Sid 1 : " + mhsS3.getSidang1());
+                System.out.println("Sid 2 : " + mhsS3.getSidang2());
+                System.out.println("Sid 3 : " + mhsS3.getSidang3());
+            }
+        }
+    }
 }

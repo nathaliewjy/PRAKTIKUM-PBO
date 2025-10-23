@@ -6,10 +6,14 @@ public class Dosen extends Staff {
     private String departemen;
     private ArrayList<MatkulAjar> matkulAjar;
 
-    public Dosen(UserType type, String nik, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
+    public Dosen(UserType type, String nik, String departemen, String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon) {
         super(type, nik, nama, alamat, tempatLahir, tanggalLahir, telepon);
         this.departemen = departemen;
         this.matkulAjar = new ArrayList<>();
+    }
+
+    public String getDepartemen() {
+        return departemen;
     }
 
     public ArrayList<MatkulAjar> getListMatkulAjar() {
