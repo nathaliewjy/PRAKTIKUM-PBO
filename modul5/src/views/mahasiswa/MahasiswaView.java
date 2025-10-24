@@ -64,8 +64,8 @@ public class MahasiswaView {
                 mahasiswaController.addMahasiswa(mhsS1);
                 System.out.println("yey add mhsS1, trs input matkul yea");
 
-                String nim = dataMhs[0];
-                matkulAmbilAddView.render(nim);
+                String nimS1 = dataMhs[0];
+                matkulAmbilAddView.render(nimS1, "S1");
                 break;
             case 2:
                 System.out.print("Tesis : ");
@@ -73,7 +73,10 @@ public class MahasiswaView {
 
                 MahasiswaMagister mhsS2 = new MahasiswaMagister(tesis, dataMhs[0], dataMhs[1], dataMhs[2], dataMhs[3], dataMhs[4], dataMhs[5], dataMhs[6]);
                 mahasiswaController.addMahasiswa(mhsS2);
-                System.out.println("yey add mhsS2");
+                System.out.println("yey add mhsS2, input matkul yaa");
+
+                String nimS2 = dataMhs[0];
+                matkulAmbilAddView.render(nimS2, "S2");
                 break;
             case 3:
                 System.out.print("Disertasi: ");

@@ -24,10 +24,8 @@ public class MahasiswaMagister extends Mahasiswa {
         return this.matkulAmbil;
     }
 
-    public void addMatkulAmbil(int n1, int n2, int n3, String kodeMatkul, String namaMatkul, int sks) {
-//        MatkulAmbil matkulAmbil1 = new MatkulAmbil(n1, n2, n3, kodeMatkul, namaMatkul, sks);
-//        this.matkulAmbil.add(matkulAmbil1);
-        this.matkulAmbil.add(new MatkulAmbil(n1, n2, n3, kodeMatkul, namaMatkul, sks));
+    public void addMatkulAmbil(MatkulAmbil matkul) {
+        this.matkulAmbil.add(matkul);
     }
 
     @Override

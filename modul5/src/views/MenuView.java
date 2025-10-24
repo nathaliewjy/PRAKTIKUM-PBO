@@ -2,15 +2,15 @@ package views;
 
 import util.CLIUtil;
 import views.mahasiswa.MahasiswaView;
-import views.staff.DosenView;
+import views.staff.StaffView;
 
 public class MenuView {
     private MahasiswaView mahasiswaView;
-    private DosenView dosenView;
+    private StaffView dosenView;
 
     public MenuView() {
         this.mahasiswaView = new MahasiswaView();
-        this.dosenView =  new DosenView();
+        this.dosenView =  new StaffView();
     }
 
     public void render() {

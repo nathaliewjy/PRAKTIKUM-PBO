@@ -20,8 +20,8 @@ public class Dosen extends Staff {
         return this.matkulAjar;
     }
 
-    public void addMatkulAjar(String kodeMatkul, String namaMatkul, int sks) {
-        this.matkulAjar.add(new MatkulAjar(kodeMatkul, namaMatkul, sks));
+    public void addMatkulAjar(MatkulAjar matkul) {
+        this.matkulAjar.add(matkul);
     }
 
     @Override

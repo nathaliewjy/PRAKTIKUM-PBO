@@ -1,18 +1,18 @@
 package controllers;
 
-import models.Dosen;
+import models.Staff;
 import repository.StaffRepository;
 
 import java.util.List;
 
-public class DosenController {
+public class StaffController {
     private StaffRepository staffRepository;
 
-    public List<Dosen> getAllDsns() {
+    public List<Staff> getAllStfs() {
         return staffRepository.findAll();
     }
 
-    public void addDosen(Dosen dsn) {
-        StaffRepository.addStaff(dsn);
+    public void addStaff(Staff stf) {
+        StaffRepository.addStaff(stf);
     }
 }

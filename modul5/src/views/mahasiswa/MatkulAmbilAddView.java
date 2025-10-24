@@ -11,7 +11,7 @@ public class MatkulAmbilAddView {
         this.matkulAmbilController = new MatkulAmbilController();
     }
 
-    public void render(String nim) {
+    public void render(String nim, String s) {
         System.out.println("Ambil berapa matkul : ");
         int jumlahMatkul = CLIUtil.getInt();
 
@@ -31,8 +31,12 @@ public class MatkulAmbilAddView {
             System.out.println("SKS : ");
             int sks = CLIUtil.getInt();
 
-            matkulAmbilController.addMatkulKeMhs(nim, n1, n2, n3, kodeMatkul, namaMatkul, sks);
+            if (s.equals("S1")) {
+                matkulAmbilController.addMatkulKeMhs(nim, n1, n2, n3, kodeMatkul, namaMatkul, sks);
+            } else if (s.equals("S2")) {
+                matkulAmbilController.addMatkulKeMhsS2(nim,n1, n2, n3, kodeMatkul, namaMatkul, sks);
+            }
         }
-        System.out.println("yey add");
+        System.out.println("yey add mat ambil");
     }
 }

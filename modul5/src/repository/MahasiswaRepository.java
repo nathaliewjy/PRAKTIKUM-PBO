@@ -35,6 +35,16 @@ public class MahasiswaRepository {
         return null;
     }
 
+    public static MahasiswaMagister findByNimS2(String nim) {
+        Mahasiswa mhs = findByNim(nim);
+
+        if (mhs instanceof MahasiswaMagister) {
+            return (MahasiswaMagister) mhs;
+        }
+
+        return null;
+    }
+
     public static void addMahasiswa(Mahasiswa mhs) {
         mhss.add(mhs);
     }
