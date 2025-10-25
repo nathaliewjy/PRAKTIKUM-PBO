@@ -10,10 +10,13 @@ public class CLIUtil {
     }
 
     public static int getInt() {
-        return sc.nextInt();
+        int input = sc.nextInt();
+        sc.nextLine();
+
+        return input;
     }
 
     public static String getString() {
-        return sc.next();
+        return sc.nextLine();
     }
 }

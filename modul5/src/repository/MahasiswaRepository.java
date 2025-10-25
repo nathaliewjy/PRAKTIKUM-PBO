@@ -48,4 +48,14 @@ public class MahasiswaRepository {
     public static void addMahasiswa(Mahasiswa mhs) {
         mhss.add(mhs);
     }
+
+    // 1. Print UserData apabila diberi input nama, tampilkan juga statusnya (mahasiswa, dosen tetap, honorer, karyawan, dst.)
+    public static Mahasiswa findByNama(String nama) {
+        for (Mahasiswa mhs : mhss) {
+            if (mhs.getNama().equalsIgnoreCase(nama)) {
+                return mhs;
+            }
+        }
+        return null;
+    }
 }

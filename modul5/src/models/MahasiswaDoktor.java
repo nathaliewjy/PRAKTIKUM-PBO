@@ -52,4 +52,9 @@ public class MahasiswaDoktor extends Mahasiswa {
     public String toString() {
         return super.toString() + " " + this.disertasi + " " + this.sidang1 + " " + this.sidang2 + " " + this.sidang3;
     }
+
+    //     // 2. Print Nilai Akhir (NA) untuk seorang mahasiswa apabila diinput NIM dan KodeMK-nya.
+    public double hitungNA() {
+        return (sidang1 + sidang2 + sidang3) / 3.0;
+    }
 }

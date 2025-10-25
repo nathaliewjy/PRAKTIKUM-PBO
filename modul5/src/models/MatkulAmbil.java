@@ -53,4 +53,22 @@ public class MatkulAmbil extends Matkul {
     public String toString() {
         return super.toString() + " " + this.listPresensi + " " + this.n1 + " " + this.n2 + " " + this.n3;
     }
+
+    // 2. Print Nilai Akhir (NA) untuk seorang mahasiswa apabila diinput NIM dan KodeMK-nya.
+    public double hitungNA() {
+        return (n1 + n2 + n3) / 3.0;
+    }
+
+    // 5. Print Matkul Ambil apa saja untuk mahasiswa tertentu (input NIM) beserta total presensinya.
+    public int hitungTotalPresensi() {
+        int totalPres = 0;
+
+        for (Presensi presensi : getListPresensi()) {
+            if (presensi.getStatus() == Status.HADIR) {
+                totalPres++;
+            }
+        }
+
+        return totalPres;
+    }
 }

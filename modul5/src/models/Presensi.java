@@ -17,6 +17,10 @@ public class Presensi {
         this.tanggal = tanggal;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
     @Override
     public String toString() {
         return this.tanggal + " " + this.status;

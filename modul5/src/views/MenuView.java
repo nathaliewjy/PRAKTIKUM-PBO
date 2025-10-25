@@ -6,17 +6,32 @@ import views.staff.StaffView;
 
 public class MenuView {
     private MahasiswaView mahasiswaView;
-    private StaffView dosenView;
+    private StaffView staffView;
+    private UserSearchView userSearchView;
+    private NilaiAkhirView nilaiAkhirView;
+    private RataNilaiAkhirView rataNilaiAkhirView;
+    private MahasiswaGagalView mahasiswaGagalView;
+    private MatkulPresensiView matkulPresensiView;
 
     public MenuView() {
         this.mahasiswaView = new MahasiswaView();
-        this.dosenView =  new StaffView();
+        this.staffView =  new StaffView();
+        this.userSearchView = new UserSearchView();
+        this.nilaiAkhirView = new NilaiAkhirView();
+        this.rataNilaiAkhirView = new RataNilaiAkhirView();
+        this.mahasiswaGagalView = new MahasiswaGagalView();
+        this.matkulPresensiView = new MatkulPresensiView();
     }
 
     public void render() {
         System.out.println("Menu SIA");
         System.out.println("1. views.mahasiswa");
-        System.out.println("2. views.dosen");
+        System.out.println("2. views.staff");
+        System.out.println("3. Print UserData apabila diberi input nama (no 1)");
+        System.out.println("4. Print Nilai Akhir (NA) untuk seorang mahasiswa apabila diinput NIM dan KodeMK-nya (no 2)");
+        System.out.println("5. Print Rata-Rata Nilai Akhir (NR) seluruh mahasiswa apabila diinput KodeMK (no 3)");
+        System.out.println("6. Print berapa banyak mahasiswa yang tidak lulus (NA < 56) apabila diinput KodeMK (no 4");
+        System.out.println(" 7. Print Matkul Ambil apa saja untuk mahasiswa tertentu (input NIM) beserta total presensinya (no 5)");
         System.out.print("Pilih menu : ");
 
         this.handleMenuInput();
@@ -30,7 +45,24 @@ public class MenuView {
                 this.mahasiswaView.render();
                 break;
             case 2:
-                this.dosenView.render();
+                this.staffView.render();
+                break;
+            case 3:
+                this.userSearchView.render();
+                break;
+            case 4:
+                this.nilaiAkhirView.render();
+                break;
+            case 5:
+                this.rataNilaiAkhirView.render();
+                break;
+            case 6:
+                this.mahasiswaGagalView.render();
+                break;
+            case 7:
+                this.matkulPresensiView.render();
+                break;
+
         }
     }
 }

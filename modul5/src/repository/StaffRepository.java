@@ -38,4 +38,14 @@ public class StaffRepository {
         }
         return null;
     }
+
+    // 1. Print UserData apabila diberi input nama, tampilkan juga statusnya (mahasiswa, dosen tetap, honorer, karyawan, dst.)
+    public static Staff findByNama(String nama) {
+        for (Staff stf : stfs) {
+            if (stf.getNama().equalsIgnoreCase(nama)) {
+                return stf;
+            }
+        }
+        return null;
+    }
 }
