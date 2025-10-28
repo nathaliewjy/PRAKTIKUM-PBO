@@ -17,6 +17,15 @@ public class Notes {
     // NilaiAKhirController hitungMahasiswaGagal
     // MahasiswaGagalView render tar dipanggil
 
+    // 5
+    // di model MatkulAmbil nambah method hitungTotalPresensi
+    // MatkulPresensiView render (btw logicny disatuin disini krn mikirnya dia g ngitung apa" jd lgsg aja di view gausah pake cont)
 
+    // 6
+    // DosenController hitungJamNgajar
+    // DosenNgajarView render
+
+    // 7
+    // Staff -> Karyawan, DOsenTetap, DosenHonorer nambah method (pke ovverride)
 
 }

@@ -20,4 +20,9 @@ public class DosenHonorer extends Dosen{
     public String toString() {
         return super.toString() + " " + this.honorPerSKS;
     }
+
+    @Override
+    public double hitungGaji(int unit) {
+        return unit * honorPerSKS;
+    }
 }

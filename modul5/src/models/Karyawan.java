@@ -34,4 +34,9 @@ public class Karyawan extends Staff {
     public String toString() {
         return super.toString() + " " + this.salary + " " + this.presensiStaff;
     }
+
+    @Override
+    public double hitungGaji(int unit) {
+        return (unit * 22.0) * salary;
+    }
 }

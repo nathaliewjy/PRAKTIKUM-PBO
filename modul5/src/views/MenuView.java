@@ -12,6 +12,7 @@ public class MenuView {
     private RataNilaiAkhirView rataNilaiAkhirView;
     private MahasiswaGagalView mahasiswaGagalView;
     private MatkulPresensiView matkulPresensiView;
+    private DosenNgajarView dosenNgajarView;
 
     public MenuView() {
         this.mahasiswaView = new MahasiswaView();
@@ -21,6 +22,7 @@ public class MenuView {
         this.rataNilaiAkhirView = new RataNilaiAkhirView();
         this.mahasiswaGagalView = new MahasiswaGagalView();
         this.matkulPresensiView = new MatkulPresensiView();
+        this.dosenNgajarView = new DosenNgajarView();
     }
 
     public void render() {
@@ -32,6 +34,7 @@ public class MenuView {
         System.out.println("5. Print Rata-Rata Nilai Akhir (NR) seluruh mahasiswa apabila diinput KodeMK (no 3)");
         System.out.println("6. Print berapa banyak mahasiswa yang tidak lulus (NA < 56) apabila diinput KodeMK (no 4");
         System.out.println(" 7. Print Matkul Ambil apa saja untuk mahasiswa tertentu (input NIM) beserta total presensinya (no 5)");
+        System.out.println("8. Print total berapa jam seorang dosen (input NIK Dosen) masuk kelas dan mengajar (no 6)");
         System.out.print("Pilih menu : ");
 
         this.handleMenuInput();
@@ -62,7 +65,8 @@ public class MenuView {
             case 7:
                 this.matkulPresensiView.render();
                 break;
-
+            case 8:
+                this.dosenNgajarView.render();
         }
     }
 }

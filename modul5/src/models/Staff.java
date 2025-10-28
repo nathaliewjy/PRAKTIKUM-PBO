@@ -1,6 +1,6 @@
 package models;
 
-public class Staff extends User {
+public abstract class Staff extends User {
     private String nik;
 
     // usertype ga masuk parameter krn usertype cmn bs 1
@@ -22,4 +22,7 @@ public class Staff extends User {
     public String toString() {
         return super.toString() + " " + this.nik;
     }
+
+    // 7. Print gaji seorang staff tertentu dengan ketentuan : (unit teh jumlah hadir)
+    public abstract double hitungGaji(int unit);
 }

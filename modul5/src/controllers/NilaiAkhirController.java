@@ -9,6 +9,10 @@ public class NilaiAkhirController {
     public double hitungNA(String nim, String kodeMatkul) {
         Mahasiswa mhs = MahasiswaRepository.findByNim(nim);
 
+        if (mhs == null) {
+            System.out.println("G ada mhs nua");
+        }
+
         if (mhs instanceof MahasiswaSarjana || mhs instanceof MahasiswaMagister) {
             List<MatkulAmbil> matkulAmbil;
 

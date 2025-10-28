@@ -20,4 +20,9 @@ public class DosenTetap extends Dosen{
     public String toString() {
         return super.toString() + " " + this.salary;
     }
+
+    @Override
+    public double hitungGaji(int unit) {
+        return salary + (unit* 25000);
+    }
 }

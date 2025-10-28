@@ -1,7 +1,6 @@
 package controllers;
 
-import models.Dosen;
-import models.Staff;
+import models.*;
 import repository.StaffRepository;
 
 import java.util.ArrayList;
@@ -24,5 +23,23 @@ public class DosenController {
 
     public void addDosen(Dosen dsn) {
         StaffRepository.addStaff(dsn);
+    }
+
+    // 6. Print total berapa jam seorang dosen (input NIK Dosen) masuk kelas dan mengajar (akumulasidari seluruh MK yang diajar)
+    public int hitungJamNgajar(String nik) {
+        int totalJam = 0;
+
+        Dosen dsn = StaffRepository.findByNikDsn(nik);
+
+        // ni ngeloop matkul yg dia ajar, trs loop presensinua
+        for (MatkulAjar matkulAjar : dsn.getListMatkulAjar()) {
+            for (PresensiStaff pres : matkulAjar.getListPresensiStaff()) {
+                if (pres.getStatus() == Status.HADIR) {
+                    totalJam += pres.getJam();
+                }
+            }
+        }
+
+        return totalJam;
     }
 }
