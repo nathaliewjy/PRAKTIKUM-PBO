@@ -13,14 +13,12 @@ public class UserSearchView {
 
     // 1. Print UserData apabila diberi input nama, tampilkan juga statusnya (mahasiswa, dosen tetap, honorer, karyawan, dst.)
     public void render() {
-        System.out.print("Cari nama : ");
-        String cariNama = CLIUtil.getString();
+        String cariNama = CLIUtil.getString("Cari nama : ");
 
         User user = userController.findByNama(cariNama);
 
         if (user != null) {
             System.out.println("Data user : " + user.toString());
-//            System.out.println("Usertype : " + user.getClass().getSimpleName());
         } else {
             System.out.println("G ktmu namanya");
         }

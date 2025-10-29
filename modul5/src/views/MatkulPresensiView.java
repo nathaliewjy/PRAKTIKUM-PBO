@@ -9,8 +9,7 @@ import java.util.List;
 
 public class MatkulPresensiView {
     public void render() {
-        System.out.print("NIM : ");
-        String nim = CLIUtil.getString();
+        String nim = CLIUtil.getString("NIM : ");
 
         Mahasiswa mhs = MahasiswaRepository.findByNim(nim);
 

@@ -11,8 +11,7 @@ public class MahasiswaGagalView {
     }
 
     public void render() {
-        System.out.print("Kode matkul : ");
-        String kodeMatkul = CLIUtil.getString();
+        String kodeMatkul = CLIUtil.getString("Kode matkul : ");
 
         int[] semua = nilaiAkhirController.hitungMahasiswaGagal(kodeMatkul);
         int semuaMhsGagal = semua[0];

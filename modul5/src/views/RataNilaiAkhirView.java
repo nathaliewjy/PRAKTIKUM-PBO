@@ -11,8 +11,7 @@ public class RataNilaiAkhirView {
     }
 
     public void render() {
-        System.out.print("Kode matkul : ");
-        String kodeMatkul = CLIUtil.getString();
+        String kodeMatkul = CLIUtil.getString("Kode matkul : ");
 
         double rataNA = nilaiAkhirController.hitungRataNA(kodeMatkul);
 

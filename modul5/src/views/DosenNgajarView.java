@@ -10,8 +10,7 @@ public class DosenNgajarView {
         this.dosenController = new DosenController();
     }
     public void render() {
-        System.out.println("NIK : ");
-        String nik = CLIUtil.getString();
+        String nik = CLIUtil.getString("NIK : ");
 
         int totalJam = dosenController.hitungJamNgajar(nik);
 

@@ -38,13 +38,12 @@ public class MenuView {
         System.out.println(" 7. Print Matkul Ambil apa saja untuk mahasiswa tertentu (input NIM) beserta total presensinya (no 5)");
         System.out.println("8. Print total berapa jam seorang dosen (input NIK Dosen) masuk kelas dan mengajar (no 6)");
         System.out.println("9. 7. Print gaji seorang staff tertentu dengan ketentuan (no 7)");
-        System.out.print("Pilih menu : ");
 
         this.handleMenuInput();
     }
 
     private void handleMenuInput() {
-        int pilihMenu = CLIUtil.getInt();
+        int pilihMenu = CLIUtil.getInt("Pilih menu : ");
 
         switch (pilihMenu) {
             case 1:

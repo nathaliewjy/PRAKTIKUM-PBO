@@ -6,18 +6,12 @@ public class StaffAddView {
 
     // pake String[] biar semua data msk ke DsnView nnt
     public String[] render() {
-        System.out.print("NIK : ");
-        String nik = CLIUtil.getString();
-        System.out.print("Nama : ");
-        String nama = CLIUtil.getString();
-        System.out.print("Alamat : ");
-        String alamat = CLIUtil.getString();
-        System.out.print("Tempat lahir : ");
-        String tempatLahir = CLIUtil.getString();
-        System.out.print("Tanggal lahir : ");
-        String tanggalLahir = CLIUtil.getString();
-        System.out.print("Telepon : ");
-        String telepon = CLIUtil.getString();
+        String nik = CLIUtil.getString("NIK : ");
+        String nama = CLIUtil.getString("Nama : ");
+        String alamat = CLIUtil.getString("Alamat : ");
+        String tempatLahir = CLIUtil.getString("Tempat lahir : ");
+        String tanggalLahir = CLIUtil.getString("Tanggal lahir : ");
+        String telepon = CLIUtil.getString("Telepon : ");
 
         System.out.println("yey add data staff");
 

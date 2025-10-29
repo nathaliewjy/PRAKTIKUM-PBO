@@ -4,8 +4,7 @@ import util.CLIUtil;
 
 public class KaryawanAddView {
     public int render() {
-        System.out.println("Salary : ");
-        int salary = CLIUtil.getInt();
+        int salary = CLIUtil.getInt("Salary : ");
 
         return salary;
     }

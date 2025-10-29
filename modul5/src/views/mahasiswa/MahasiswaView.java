@@ -31,8 +31,7 @@ public class MahasiswaView {
             System.out.println("1. Show all mhs");
             System.out.println("2. Add mhs");
             System.out.println("0. Exit");
-            System.out.print("Pilih menu : ");
-            pilihMenu = CLIUtil.getInt();
+            pilihMenu = CLIUtil.getInt("Pilih menu : ");
 
             switch (pilihMenu) {
                 case 1:
@@ -53,8 +52,7 @@ public class MahasiswaView {
         System.out.println("1. Sarjana ");
         System.out.println("2. Magister ");
         System.out.println("3. Doktor");
-        System.out.print("Pilih mahasiawa : ");
-        int pilihMhs = CLIUtil.getInt();
+        int pilihMhs = CLIUtil.getInt("Pilih mahasiawa : ");
 
         String[] dataMhs = mahasiswaAddView.render();
 
@@ -68,8 +66,7 @@ public class MahasiswaView {
                 matkulAmbilAddView.render(nimS1, "S1");
                 break;
             case 2:
-                System.out.print("Tesis : ");
-                String tesis = CLIUtil.getString();
+                String tesis = CLIUtil.getString("Tesis : ");
 
                 MahasiswaMagister mhsS2 = new MahasiswaMagister(tesis, dataMhs[0], dataMhs[1], dataMhs[2], dataMhs[3], dataMhs[4], dataMhs[5], dataMhs[6]);
                 mahasiswaController.addMahasiswa(mhsS2);
@@ -79,14 +76,10 @@ public class MahasiswaView {
                 matkulAmbilAddView.render(nimS2, "S2");
                 break;
             case 3:
-                System.out.print("Disertasi: ");
-                String disertasi = CLIUtil.getString();
-                System.out.print("Sid 1 : ");
-                int sidang1 = CLIUtil.getInt();
-                System.out.print("Sid 2 : ");
-                int sidang2 = CLIUtil.getInt();
-                System.out.print("Sid 3 : ");
-                int sidang3 = CLIUtil.getInt();
+                String disertasi = CLIUtil.getString("Disertasi: ");
+                int sidang1 = CLIUtil.getInt("Sid 1 : ");
+                int sidang2 = CLIUtil.getInt("Sid 2 : ");
+                int sidang3 = CLIUtil.getInt("Sid 3 : ");
 
                 MahasiswaDoktor mhsS3 = new MahasiswaDoktor(disertasi, sidang1, sidang2, sidang3, dataMhs[0], dataMhs[1], dataMhs[2], dataMhs[3], dataMhs[4], dataMhs[5], dataMhs[6]);
                 mahasiswaController.addMahasiswa(mhsS3);

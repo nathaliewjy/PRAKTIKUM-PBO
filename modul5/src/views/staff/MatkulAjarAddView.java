@@ -11,20 +11,15 @@ public class MatkulAjarAddView {
     }
 
     public void render() {
-        System.out.println("NIK : ");
-        String nik = CLIUtil.getString();
-        System.out.println("Ajar berapa matkul : ");
-        int jumlahMatkul = CLIUtil.getInt();
+        String nik = CLIUtil.getString("NIK : ");
+        int jumlahMatkul = CLIUtil.getInt("Ajar berapa matkul : ");
 
         for (int i = 0; i < jumlahMatkul; i++) {
             System.out.println("Matkul ke-" + (i+1));
 
-            System.out.println("Kode matkul : ");
-            String kodeMatkul = CLIUtil.getString();
-            System.out.println("Nama matkul : ");
-            String namaMatkul = CLIUtil.getString();
-            System.out.println("SKS : ");
-            int sks = CLIUtil.getInt();
+            String kodeMatkul = CLIUtil.getString("Kode matkul : ");
+            String namaMatkul = CLIUtil.getString("Nama matkul : ");
+            int sks = CLIUtil.getInt("SKS : ");
 
             matkulAjarController.addMatkulKeDsn(nik, kodeMatkul, namaMatkul, sks);
         }

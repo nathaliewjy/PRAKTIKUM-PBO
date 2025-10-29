@@ -12,8 +12,7 @@ public class GajiView {
     }
 
     public void render()  {
-        System.out.print("NIK : ");
-        String nik = CLIUtil.getString();
+        String nik = CLIUtil.getString("NIK : ");
 
         double gaji = staffController.getGaji(nik);
 

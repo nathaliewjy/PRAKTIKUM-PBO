@@ -11,11 +11,8 @@ public class NilaiAkhirView {
     }
 
     public void render() {
-        System.out.print("NIM : ");
-        String nim = CLIUtil.getString();
-
-        System.out.print("Kode matkul : ");
-        String kodeMatkul = CLIUtil.getString();
+        String nim = CLIUtil.getString("NIM : ");
+        String kodeMatkul = CLIUtil.getString("Kode matkul : ");
 
         double NA = nilaiAkhirController.hitungNA(nim, kodeMatkul);
 

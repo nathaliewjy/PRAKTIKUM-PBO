@@ -12,24 +12,17 @@ public class MatkulAmbilAddView {
     }
 
     public void render(String nim, String s) {
-        System.out.println("Ambil berapa matkul : ");
-        int jumlahMatkul = CLIUtil.getInt();
+        int jumlahMatkul = CLIUtil.getInt("Ambil berapa matkul : ");
 
         for (int i = 0; i < jumlahMatkul; i++) {
             System.out.println("Matkul ke-" + (i+1));
 
-            System.out.println("N1 : ");
-            int n1 = CLIUtil.getInt();
-            System.out.println("N2 : ");
-            int n2 = CLIUtil.getInt();
-            System.out.println("N3 : ");
-            int n3 = CLIUtil.getInt();
-            System.out.println("Kode matkul : ");
-            String kodeMatkul = CLIUtil.getString();
-            System.out.println("Nama matkul : ");
-            String namaMatkul = CLIUtil.getString();
-            System.out.println("SKS : ");
-            int sks = CLIUtil.getInt();
+            int n1 = CLIUtil.getInt("N1 : ");
+            int n2 = CLIUtil.getInt("N2 : ");
+            int n3 = CLIUtil.getInt("N3 : ");
+            String kodeMatkul = CLIUtil.getString("Kode matkul : ");
+            String namaMatkul = CLIUtil.getString("Nama matkul : ");
+            int sks = CLIUtil.getInt("SKS : ");
 
             if (s.equals("S1")) {
                 matkulAmbilController.addMatkulKeMhs(nim, n1, n2, n3, kodeMatkul, namaMatkul, sks);

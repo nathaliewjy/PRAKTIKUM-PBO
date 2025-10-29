@@ -33,8 +33,7 @@ public class StaffView {
             System.out.println("3. Add matkul ajar");
             System.out.println("4. Add presensi ke matkul");
             System.out.println("0. Exit");
-            System.out.print("Pilih menu : ");
-            pilihMenu = CLIUtil.getInt();
+            pilihMenu = CLIUtil.getInt("Pilih menu : ");
 
             switch (pilihMenu) {
                 case 1:
@@ -58,8 +57,7 @@ public class StaffView {
         System.out.println("Add staff");
         System.out.println("1. Karyawan");
         System.out.println("2. Dosen");
-        System.out.print("Pilih staff : ");
-        int pilihStaff = CLIUtil.getInt();
+        int pilihStaff = CLIUtil.getInt("Pilih staff : ");
 
         String[] dataStf = staffAddView.render();
 
@@ -83,24 +81,20 @@ public class StaffView {
         System.out.println("Add dosen");
         System.out.println("1. Tetap");
         System.out.println("2. Hororer");
-        System.out.print("Pilih dosen (1/2) : ");
-        int pilihDosen = CLIUtil.getInt();
+        int pilihDosen = CLIUtil.getInt("Pilih dosen (1/2) : ");
 
-        System.out.print("Departemen : ");
-        String departemen = CLIUtil.getString();
+        String departemen = CLIUtil.getString("Departemen : ");
 
         switch (pilihDosen) {
             case 1:
-                System.out.print("Salary : ");
-                int salary = CLIUtil.getInt();
+                int salary = CLIUtil.getInt("Salary : ");
 
                 DosenTetap dsnTtp = new DosenTetap(salary, dataStf[0], departemen, dataStf[1], dataStf[2], dataStf[3], dataStf[4], dataStf[5]);
                 staffController.addStaff(dsnTtp);
                 System.out.println("yey add dosen tetap");
                 break;
             case 2:
-                System.out.print("Honor per sks : ");
-                int honorPerSKS = CLIUtil.getInt();
+                int honorPerSKS = CLIUtil.getInt("Honor per sks : ");
 
                 DosenHonorer dsnHnr = new DosenHonorer(honorPerSKS, dataStf[0], departemen, dataStf[1], dataStf[2], dataStf[3], dataStf[4], dataStf[5]);
                 staffController.addStaff(dsnHnr);
