@@ -26,6 +26,12 @@ public class Notes {
     // DosenNgajarView render
 
     // 7
-    // Staff -> Karyawan, DOsenTetap, DosenHonorer nambah method (pke ovverride)
+    // Staff -> Karyawan, DOsenTetap, DosenHonorer nambah method hitungGaji (tar pke ovverride)
+    // Staff nambah method hitungUnit, trus dipake di dalem method hitungGaji pas override
+    // tdnya ArrayList<PresensiStaff> cmm ada di Karyawan, trs dipindah ke Staff krn dosen jg butuh preesensi
+    // StaffCont getGaji, dia nyari staff trus manggil stf.hitungGaji (polymor) -> manggil method hitungGaji yg dioverride di objek stf
+    // GajiView render
+
+
 
 }

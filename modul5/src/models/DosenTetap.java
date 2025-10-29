@@ -22,7 +22,8 @@ public class DosenTetap extends Dosen{
     }
 
     @Override
-    public double hitungGaji(int unit) {
-        return salary + (unit* 25000);
+    public double hitungGaji() {
+        int unit = this.hitungUnit();
+        return (double) salary + ((double) unit* 25000);
     }
 }

@@ -22,7 +22,8 @@ public class DosenHonorer extends Dosen{
     }
 
     @Override
-    public double hitungGaji(int unit) {
-        return unit * honorPerSKS;
+    public double hitungGaji() {
+        int unit = this.hitungUnit();
+        return (double) unit * honorPerSKS;
     }
 }

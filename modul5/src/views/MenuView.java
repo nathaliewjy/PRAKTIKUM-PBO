@@ -13,6 +13,7 @@ public class MenuView {
     private MahasiswaGagalView mahasiswaGagalView;
     private MatkulPresensiView matkulPresensiView;
     private DosenNgajarView dosenNgajarView;
+    private GajiView gajiView;
 
     public MenuView() {
         this.mahasiswaView = new MahasiswaView();
@@ -23,6 +24,7 @@ public class MenuView {
         this.mahasiswaGagalView = new MahasiswaGagalView();
         this.matkulPresensiView = new MatkulPresensiView();
         this.dosenNgajarView = new DosenNgajarView();
+        this.gajiView = new GajiView();
     }
 
     public void render() {
@@ -35,6 +37,7 @@ public class MenuView {
         System.out.println("6. Print berapa banyak mahasiswa yang tidak lulus (NA < 56) apabila diinput KodeMK (no 4");
         System.out.println(" 7. Print Matkul Ambil apa saja untuk mahasiswa tertentu (input NIM) beserta total presensinya (no 5)");
         System.out.println("8. Print total berapa jam seorang dosen (input NIK Dosen) masuk kelas dan mengajar (no 6)");
+        System.out.println("9. 7. Print gaji seorang staff tertentu dengan ketentuan (no 7)");
         System.out.print("Pilih menu : ");
 
         this.handleMenuInput();
@@ -67,6 +70,10 @@ public class MenuView {
                 break;
             case 8:
                 this.dosenNgajarView.render();
+                break;
+            case 9:
+                this.gajiView.render();
+                break;
         }
     }
 }

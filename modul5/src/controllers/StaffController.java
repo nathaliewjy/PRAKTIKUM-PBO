@@ -14,4 +14,14 @@ public class StaffController {
     public void addStaff(Staff stf) {
         StaffRepository.addStaff(stf);
     }
+
+    public Staff findByNik(String nik) {
+        return StaffRepository.findByNik(nik);
+    }
+
+    public double getGaji(String nik) {
+        Staff stf = findByNik(nik);
+
+        return stf.hitungGaji();
+    }
 }
