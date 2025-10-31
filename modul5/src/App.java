@@ -55,7 +55,7 @@ public class App {
         MatkulAjar dsn_matkul = new MatkulAjar("IF101", "Algoritma", 3);
         dsnTtp1.addPresensi(8, "01/10/2025", Status.HADIR); // ✅ Tambahkan presensi untuk Dosen Tetap
         dsn_matkul.getListPresensiStaff().add(new PresensiStaff(8, "01/10/2025", Status.HADIR));
-        StaffRepository.findByNikDsn("111001").addMatkulAjar(dsn_matkul);
+        ((Dosen) StaffRepository.findByNikDsn("111001")).addMatkulAjar(dsn_matkul);
 
         // --- Presensi Karyawan ---
         kryn1.addPresensi(8, "01/10/2025", Status.HADIR);

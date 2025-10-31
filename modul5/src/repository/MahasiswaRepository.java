@@ -25,24 +25,31 @@ public class MahasiswaRepository {
         return null;
     }
 
-    public static MahasiswaSarjana findByNimS1(String nim) {
-        Mahasiswa mhs = findByNim(nim);
-
-        if (mhs instanceof MahasiswaSarjana) {
-            return (MahasiswaSarjana) mhs;
+    public static Mahasiswa findByNimS1(String nim) {
+        for (Mahasiswa mhs : mhss)  {
+            if (mhs.getNim().equals(nim) && mhs.getUserType() == UserType.MAHASISWA_SARJANA) {
+                return mhs;
+            }
         }
 
         return null;
     }
 
-    public static MahasiswaMagister findByNimS2(String nim) {
-        Mahasiswa mhs = findByNim(nim);
-
-        if (mhs instanceof MahasiswaMagister) {
-            return (MahasiswaMagister) mhs;
+    public static Mahasiswa findByNimS2(String nim) {
+        for (Mahasiswa mhs : mhss) {
+            if (mhs.getNim().equals(nim) && mhs.getUserType() == UserType.MAHASISWA_MAGISTER) {
+                return mhs;
+            }
         }
 
         return null;
+//        Mahasiswa mhs = findByNim(nim);
+//
+//        if (mhs instanceof MahasiswaMagister) {
+//            return (MahasiswaMagister) mhs;
+//        }
+//
+//        return null;
     }
 
     public static void addMahasiswa(Mahasiswa mhs) {

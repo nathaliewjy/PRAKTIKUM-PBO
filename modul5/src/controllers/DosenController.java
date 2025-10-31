@@ -13,8 +13,9 @@ public class DosenController {
         List<Dosen> dsns = new ArrayList<>();
 
         for (Staff stf : stfs) {
-            if (stf instanceof Dosen) {
+            if (stf.getUserType() == UserType.DOSEN_TETAP || stf.getUserType() == UserType.DOSEN_HONORER) {
                 dsns.add((Dosen) stf);
+                // inite casting, jadi stf kan awalnya Staff trs mo diganti ke Dosen, tujuannua biar bs akses method" yg cmn dipunya Dosen
             }
         }
 
@@ -29,7 +30,8 @@ public class DosenController {
     public int hitungJamNgajar(String nik) {
         int totalJam = 0;
 
-        Dosen dsn = StaffRepository.findByNikDsn(nik);
+        Staff stf = StaffRepository.findByNik(nik);
+        Dosen dsn = (Dosen) stf;
 
         // ni ngeloop matkul yg dia ajar, trs loop presensinua
         for (MatkulAjar matkulAjar : dsn.getListMatkulAjar()) {

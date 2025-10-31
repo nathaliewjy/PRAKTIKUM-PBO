@@ -1,5 +1,8 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Mahasiswa extends User {
     private String nim;
     private String kodeJurusan;
@@ -26,10 +29,16 @@ public class Mahasiswa extends User {
         this.kodeJurusan = kodeJurusan;
     }
 
-
-
     @Override
     public String toString() {
         return super.toString() + " " + this.nim + " " + this.kodeJurusan;
+    }
+
+    public List<MatkulAmbil> getListMatkulAmbil() {
+        return new ArrayList<>();
+    }
+
+    public void addMatkulAmbil(MatkulAmbil matkul) {
+
     }
 }

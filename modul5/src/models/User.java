@@ -17,6 +17,11 @@ public abstract class User {
         this.telepon = telepon;
     }
 
+    public UserType getUserType() {
+        return this.type;
+    }
+
+
     public String getNama() {
         return nama;
     }

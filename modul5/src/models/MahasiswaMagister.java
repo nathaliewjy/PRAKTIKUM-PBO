@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MahasiswaMagister extends Mahasiswa {
     private ArrayList<MatkulAmbil> matkulAmbil;
@@ -20,16 +21,18 @@ public class MahasiswaMagister extends Mahasiswa {
         this.tesis = tesis;
     }
 
-    public ArrayList<MatkulAmbil> getListMatkulAmbil() {
-        return this.matkulAmbil;
-    }
-
-    public void addMatkulAmbil(MatkulAmbil matkul) {
-        this.matkulAmbil.add(matkul);
-    }
-
     @Override
     public String toString() {
         return super.toString() + " " + this.matkulAmbil + " " + this.tesis;
+    }
+
+    @Override
+    public List<MatkulAmbil> getListMatkulAmbil() {
+        return matkulAmbil;
+    }
+
+    @Override
+    public void addMatkulAmbil(MatkulAmbil matkul) {
+        matkulAmbil.add(matkul);
     }
 }

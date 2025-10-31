@@ -3,6 +3,7 @@ package controllers;
 import models.*;
 import repository.MahasiswaRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NilaiAkhirController {
@@ -13,25 +14,24 @@ public class NilaiAkhirController {
             System.out.println("G ada mhs nua");
         }
 
-        if (mhs instanceof MahasiswaSarjana || mhs instanceof MahasiswaMagister) {
-            List<MatkulAmbil> matkulAmbil;
+        if (mhs.getUserType() == UserType.MAHASISWA_SARJANA || mhs.getUserType() == UserType.MAHASISWA_MAGISTER) {
+            List<MatkulAmbil> matkuls = new ArrayList<>();
 
-            if (mhs instanceof MahasiswaSarjana) {
-                matkulAmbil = ((MahasiswaSarjana) mhs).getListMatkulAmbil();
-            } else {
-                matkulAmbil = ((MahasiswaMagister) mhs).getListMatkulAmbil();
+            if(mhs.getUserType() == UserType.MAHASISWA_SARJANA) {
+                matkuls = ((MahasiswaSarjana) mhs).getListMatkulAmbil();
+            } else if (mhs.getUserType() == UserType.MAHASISWA_MAGISTER) {
+                matkuls = ((MahasiswaMagister) mhs).getListMatkulAmbil();
             }
 
-            for (MatkulAmbil matkul : matkulAmbil) {
+            for (MatkulAmbil matkul : matkuls) {
                 if (matkul.getKodeMatkul().equalsIgnoreCase(kodeMatkul)) {
                     return matkul.hitungNA();
                 }
             }
         }
 
-        if (mhs instanceof MahasiswaDoktor) {
-            MahasiswaDoktor mhsS3 = (MahasiswaDoktor) mhs;
-            return mhsS3.hitungNA();
+        if (mhs.getUserType() == UserType.MAHASISWA_DOKTOR) {
+            return ((MahasiswaDoktor) mhs).hitungNA();
         }
 
         return -1.0;
@@ -43,27 +43,25 @@ public class NilaiAkhirController {
         int semuaMhs = 0;
 
         for (Mahasiswa mhs : mhss) {
-            if (mhs instanceof MahasiswaSarjana || mhs instanceof MahasiswaMagister) {
-                List<MatkulAmbil> matkulAmbil;
+            if (mhs.getUserType() == UserType.MAHASISWA_SARJANA || mhs.getUserType() == UserType.MAHASISWA_MAGISTER) {
+                List<MatkulAmbil> matkuls = new ArrayList<>();
 
-                if (mhs instanceof MahasiswaSarjana) {
-                    matkulAmbil = ((MahasiswaSarjana) mhs).getListMatkulAmbil();
-                } else {
-                    matkulAmbil = ((MahasiswaMagister) mhs).getListMatkulAmbil();
+                if (mhs.getUserType() == UserType.MAHASISWA_SARJANA) {
+                    matkuls = ((MahasiswaSarjana) mhs).getListMatkulAmbil();
+                } else if (mhs.getUserType() == UserType.MAHASISWA_MAGISTER) {
+                    matkuls = ((MahasiswaMagister) mhs).getListMatkulAmbil();
                 }
 
-                for (MatkulAmbil matkul : matkulAmbil) {
+                for (MatkulAmbil matkul : matkuls) {
                     if (matkul.getKodeMatkul().equalsIgnoreCase(kodeMatkul)) {
                         totalNA += matkul.hitungNA(); // kl yg di atas lgsg return, ini ditaro biar ngumpulsmua
                         semuaMhs++; // ni jg sama biar mhs nya keitung smua
-
-                        break;
                     }
                 }
             }
         }
 
-        return (totalNA / semuaMhs);
+        return totalNA / semuaMhs;
     }
 
     public int[] hitungMahasiswaGagal(String kodeMatkul) {
@@ -73,16 +71,16 @@ public class NilaiAkhirController {
         int semuaMhs = 0;
 
         for (Mahasiswa mhs : mhss) {
-            if (mhs instanceof MahasiswaSarjana || mhs instanceof MahasiswaMagister) {
-                List<MatkulAmbil> matkulAmbil;
+            if (mhs.getUserType() == UserType.MAHASISWA_SARJANA || mhs.getUserType() == UserType.MAHASISWA_MAGISTER) {
+                List<MatkulAmbil> matkuls = new ArrayList<>();
 
-                if (mhs instanceof MahasiswaSarjana) {
-                    matkulAmbil = ((MahasiswaSarjana) mhs).getListMatkulAmbil();
-                } else {
-                    matkulAmbil = ((MahasiswaMagister) mhs).getListMatkulAmbil();
+                if (mhs.getUserType() == UserType.MAHASISWA_SARJANA) {
+                    matkuls = ((MahasiswaSarjana) mhs).getListMatkulAmbil();
+                } else if (mhs.getUserType() == UserType.MAHASISWA_MAGISTER) {
+                    matkuls = ((MahasiswaMagister) mhs).getListMatkulAmbil();
                 }
 
-                for (MatkulAmbil matkul : matkulAmbil) {
+                for (MatkulAmbil matkul : matkuls) {
                     if (matkul.getKodeMatkul().equalsIgnoreCase(kodeMatkul)) {
                         NA = matkul.hitungNA();
 
@@ -97,6 +95,7 @@ public class NilaiAkhirController {
                 }
             }
         }
+
         return new int[]{mhsGagal, semuaMhs};
     }
 }

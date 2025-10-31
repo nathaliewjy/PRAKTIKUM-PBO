@@ -3,6 +3,7 @@ package repository;
 import models.Dosen;
 import models.Staff;
 import models.Staff;
+import models.UserType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +32,13 @@ public class StaffRepository {
         stfs.add(stf);
     }
 
-    public static Dosen findByNikDsn(String nik) {
-        Staff stf = findByNik(nik);
-        if (stf instanceof Dosen) {
-            return (Dosen) stf;
+    public static Staff findByNikDsn(String nik) {
+        for (Staff stf : stfs) {
+            if (stf.getNik().equals(nik) && (stf.getUserType() == UserType.DOSEN_TETAP || stf.getUserType() == UserType.DOSEN_HONORER)) {
+                return stf;
+            }
         }
+
         return null;
     }
 
